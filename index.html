@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Escucha Activa - El Rincón del Churqui</title>
+    <style>
+    .foto-proyecto {
+    width: 100%;
+    max-width: 450px; /* Evita que se estiren de más */
+    height: auto;     /* Mantiene la proporción para que no se deformen */
+    display: block;
+    margin: 15px auto;
+    border-radius: 15px;
+    object-fit: contain;
+    }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #eae6f3; 
+            color: #333333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        nav {
+            width: 100%;
+            background-color: #dfdaf0;
+            padding: 15px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        nav a {
+            text-decoration: none;
+            color: #5a4b82;
+            font-weight: bold;
+            margin: 0 15px;
+            font-size: 1.1rem;
+        }
+        .seccion {
+            max-width: 800px;
+            width: 90%;
+            margin: 30px auto;
+            text-align: center;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            box-sizing: border-box;
+        }
+        h1, h2 { color: #4a3b6e; margin-bottom: 20px; }
+        h1 { font-size: 2.2rem; }
+        h2 { font-size: 1.8rem; }
+        .foto-proyecto {
+            width: 100%;
+            max-height: 450px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 25px;
+        }
+        p.texto {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #4f4f4f;
+            margin-bottom: 30px;
+        }
+        .boton-serrano {
+            display: inline-block;
+            background-color: #d16b9b; 
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            box-shadow: 0 4px 10px rgba(209, 107, 155, 0.3);
+        }
+        /* Contenedor adaptado para el Padlet real */
+        .contenedor-padlet {
+            width: 100%;
+            height: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 2px dashed #be5587;
+            background-color: #fcfaff;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#inicio">Inicio</a>
+        <a href="#sobre-mi">Sobre Mí</a>
+        <a href="#reflexiones">Reflexiones</a>
+    </nav>
+
+    <!-- SECCIÓN 1: INICIO -->
+    <div class="seccion" id="inicio">
+        <h1>Escucha Activa: El Rincón del Churqui</h1>
+        <img src="aromo-completo.jpg" alt="El Rincón del Churqui" class="foto-proyecto">
+        <p class="texto">
+            Bajo la calidez de nuestras sierras, este es un espacio seguro para soltar cargas, respirar profundo y ser escuchado. Sentite cómodo, estás en casa.
+        </p>
+      <a href="https://wa.me/5493584242446" style="display: block; max-width: fit-content; margin: 20px auto; background-color: #25D366; color: white; padding: 12px 24px; text-decoration: none; border-radius: 25px; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1); text-align: center;" target="_blank">Escríbeme, aquí te escucho</a>
+    <div class="seccion" id="sobre-mi">
+        <h2>Sobre Mí</h2>
+        <img src="mano-tatuaje.jpg" alt="Mi conexión con el monte" class="foto-proyecto">
+        <p class="texto">
+            Este espacio nace del respeto por los procesos de cada uno y la necesidad de encontrar un oído atento en medio del ruido diario. Aquí no hay juicios.
+        </p>
+    </div>
+
+    <!-- SECCIÓN 3: REFLEXIONES Y PADLET -->
+    <div class="seccion" id="reflexiones">
+        <h2>Reflexiones del Principito</h2>
+        <img src="principito.jpg" alt="Reflexiones del Principito" class="foto-proyecto">
+        <p class="texto" style="font-style: italic;">
+            "Ser amable es más importante que tener razón. A veces, lo que la gente necesita no es una mente brillante que hable, sino un corazón especial que escuche."
+        </p>
+        
+        <h2>Muro de Experiencias Anónimas</h2>
+        <div class="contenedor-padlet">
+            <!-- CUANDO TENGAS TU PADLET, REEMPLAZÁ LA DIRECCIÓN DE ABAJO (src) POR LA TUYA -->
+           <div class="padlet-embed" style="border:1px solid rgba(0,0,0,0.1);border-radius:2px;box-sizing:border-box;overflow:hidden;position:relative;width:100%;background:#F4F4F4"><p style="padding:0;margin:0"><iframe src="https://padlet.com/embed/7ub7m0sg35x2u335" frameborder="0" allow="camera;microphone;geolocation;display-capture;clipboard-write" style="width:100%;height:608px;display:block;padding:0;margin:0"></iframe></p></div>
+        </div>
+    </div>
+
+</body>
+</html>
