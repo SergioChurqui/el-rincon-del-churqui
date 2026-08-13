@@ -3,64 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Información y Aranceles</title>
+    <title>Condiciones y Aranceles</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #f4f6f9;
             color: #333;
             padding: 20px;
             line-height: 1.6;
         }
         .contenedor {
             max-width: 600px;
-            margin: 0 auto;
+            margin: auto;
             background: white;
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.08);
         }
-        h1 { color: #2196f3; text-align: center; }
+        h1 { color: #1565c0; text-align: center; margin-bottom: 5px; }
+        .subtitulo { text-align: center; font-size: 1.1em; color: #666; margin-top: 0; margin-bottom: 25px; }
+        .imagen-principito {
+            display: block;
+            max-width: 80%;
+            height: auto;
+            margin: 20px auto;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 { color: #1565c0; border-bottom: 2px solid #1565c0; padding-bottom: 5px; margin-top: 30px; }
+        .punto { margin-bottom: 20px; padding-left: 10px; border-left: 3px solid #1565c0; }
+        .punto strong { color: #1565c0; display: block; margin-bottom: 5px; }
+        .tarifa { margin: 20px 0; border-left: 5px solid #2196F3; padding-left: 15px; }
+        .tarifa-int { margin: 20px 0; border-left: 5px solid #ff9800; padding-left: 15px; }
+        .precio { font-size: 1.3em; font-weight: bold; margin: 5px 0; }
+        .precio.ar { color: #2e7d32; }
+        .precio.int { color: #e65100; }
+        .aclaracion { color: #666; font-size: 0.9em; margin: 0; }
         .boton-volver {
             display: block;
             width: fit-content;
-            margin: 30px auto 0;
-            background-color: #666;
+            margin: 30px auto 0 auto;
+            background-color: #37474f;
             color: white;
             padding: 10px 20px;
-            text-decoration: none;
             border-radius: 20px;
+            text-decoration: none;
             font-weight: bold;
+            text-align: center;
         }
     </style>
 </head>
 <body>
 
     <div class="contenedor">
-        <h1>Condiciones y Aranceles 📋</h1>
-        
-        <p><i>(En este espacio organizaremos los textos de tus condiciones, tiempos y costos en cuanto tengamos las capturas)</i></p>
-
-        <!-- Botón para regresar a la página principal -->
-        <a href="index.html" class="boton-volver">Volver al Inicio</a>
-    </div>
-<div class="contenedor">
         <h1>Condiciones y Aranceles</h1>
-        <p style="text-align: center; font-size: 1.2em; color: #555;">Reserva tu sesión de Escucha Activa</p>
+        <p class="subtitulo">Reserva tu sesión de Escucha Activa</p>
         
-        <div style="margin: 30px 0; border-left: 5px solid #2196F3; padding-left: 15px;">
-            <h3>🇦🇷 Usuarios en Argentina</h3>
-            <p style="font-size: 1.3em; font-weight: bold; color: #2e7d32;">$45.000 ARS</p>
-            <p style="color: #666; font-size: 0.9em;">(Valor equivalente a la sesión internacional con el descuento local aplicado)</p>
+        <!-- Foto de El Principito Nueva -->
+        <img src="principito2.jpg" alt="El Principito" class="imagen-principito">
+
+        <h2>📋 Condiciones del Servicio</h2>
+        
+        <div class="punto">
+            <strong>1. Cuestionario de Admisión y Derivación</strong>
+            Si la persona se encuentra actualmente bajo tratamiento psiquiátrico o psicológico, no podrá recibir este servicio de orientación. En estos casos, se procederá a realizar la derivación correspondiente hacia páginas y profesionales especializados en su condición.
         </div>
 
-        <div style="margin: 30px 0; border-left: 5px solid #ff9800; padding-left: 15px;">
+        <div class="punto">
+            <strong>2. Espacio de Confesionario y Sugerencias</strong>
+            Este es un espacio libre donde se puede hablar de absolutamente todo, funcionando bajo la dinámica de un confesionario. El escuchador mantendrá un rol de respeto y solo ofrecerá una sugerencia si el hablante lo solicita expresamente.
+        </div>
+
+        <div class="punto">
+            <strong>3. Duración de la Sesión</strong>
+            La sesión contratada tiene una duración estricta de 50 minutos. Es un tiempo diseñado exclusivamente para que el consultante pueda desahogarse, compartir su testimonio y expresar libremente sus emociones.
+        </div>
+
+        <div class="punto">
+            <strong>4. Política de Respeto y Convivencia</strong>
+            Se permite llorar y expresar cualquier tipo de emoción que la situación requiera. Sin embargo, no se tolerarán conductas violentas ni insultos hacia la persona que escucha. Ante una falta de respeto, se emitirá un primer apercibimiento; de persistir la actitud violenta, la sesión será cancelada inmediatamente a través de la plataforma Workana, aplicando las penalizaciones por incumplimiento de las condiciones acordadas.
+        </div>
+
+        <h2>💰 Aranceles Internacionales y Locales</h2>
+        
+        <div class="tarifa">
+            <h3>🇦🇷 Usuarios en Argentina</h3>
+            <p class="precio ar">$45.000 ARS</p>
+            <p class="aclaracion">(Valor equivalente a la sesión internacional con el descuento local aplicado)</p>
+        </div>
+
+        <div class="tarifa-int">
             <h3>🌎 Usuarios Internacionales</h3>
-            <p style="font-size: 1.3em; font-weight: bold; color: #e65100;">$35 USD</p>
-            <p style="color: #666; font-size: 0.9em;">(A través de plataformas de pago internacionales autorizadas)</p>
+            <p class="precio int">$35 USD</p>
+            <p class="aclaracion">(A través de plataformas de pago internacionales autorizadas)</p>
         </div>
 
         <a href="index.html" class="boton-volver">Volver al Inicio</a>
     </div>
+
 </body>
 </html>
