@@ -105,8 +105,8 @@
        <a href="#sobre-mi">Sobre Mí</a>
         <a href="#reflexiones">Reflexiones</a>
         <a href="#contacto">Contacto</a>
+        <a href="javascript:void(0);" id="btn-audio-menu" onclick="controlarMusica()" style="display: inline-flex; align-items: center; gap: 5px; margin-left: 15px;">🕉️<span id="icono-nota">🔇</span><
     </nav>
-
     <!-- SECCIÓN 1: INICIO -->
     <div class="seccion" id="inicio">
         <h1>Escucha Activa: El Rincón del Churqui</h1>
@@ -114,7 +114,7 @@
         <p class="texto">
             Bajo la calidez de nuestras sierras, este es un espacio seguro para soltar cargas, respirar profundo y ser escuchado. Sentite cómodo, estás en casa.
         </p>
-      <a href="https://wa.me/5493584242446" style="display: block; max-width: fit-content; margin: 20px auto; background-color: #E1B12C; color: #ffffff !important; padding: 12px 24px; border-radius: 20px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px #000000;">Escríbeme, aquí te escucho</a>
+      <a href="https://wa.me/5493584929947" style="display: block; max-width: fit-content; margin: 20px auto; background-color: #E1B12C; color: #ffffff !important; padding: 12px 24px; border-radius: 20px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px #000000;">Escríbeme, aquí te escucho</a>
     <div class="seccion" id="sobre-mi">
         <h2>Sobre Mí</h2>
         <img src="mano-tatuaje.jpg" alt="Mi conexión con el monte" class="foto-proyecto">
@@ -152,11 +152,43 @@
         <p style="font-size: 1.1em; color: #555;">¿Tienes alguna duda o quieres coordinar directamente?</p>
         <p style="font-size: 1.2em; font-weight: bold; margin: 15px 0;">
            <p style="font-size: 1.2em; font-weight: bold; margin: 15px 0;">
-            💬 WhatsApp: <a href="https://wa.me/5493584242446" target="_blank" style="color: #2e7d32; text-decoration: none;">Enviar Mensaje</a>
+            💬 WhatsApp: <a href="https://wa.me/5493584929947" target="_blank" style="color: #2e7d32; text-decoration: none;">Enviar Mensaje</a>
         </p>
         <p style="color: #777; font-size: 0.9em;">Escucha Activa - El Rincón del Churqui</p>
     </div>   
 </div>
+<!-- REPRODUCTOR OCULTO -->
+<audio id="musica-fondo" loop>
+  <source src="meditacion-2.mp3" type="audio/mpeg">
+</audio>
+
+<!-- BOTÓN FLOTANTE INFERIOR DERECHO -->
+<div id="btn-audio-flotante" onclick="controlarMusica()" style="position: fixed; bottom: 20px; right: 20px; width: 50px; height: 50px; background-color: #7d52a1; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 24px; cursor: pointer; box-shadow: 0px 4px 10px rgba(0,0,0,0.3); z-index: 9999; transition: transform 0.2s;">
+  🕉️
+</div>
+
+<!-- LÓGICA DE REPRODUCCIÓN -->
+<script>
+  const miAudio = document.getElementById('musica-fondo');
+  const btnMenuIcono = document.getElementById('icono-nota');
+  const btnFlotante = document.getElementById('btn-audio-flotante');
+
+  function controlarMusica() {
+    if (miAudio.paused) {
+      miAudio.play().catch(function(error) {
+        console.log("El navegador bloqueó el auto-play inicial:", error);
+      });
+      btnMenuIcono.textContent = "🎶"; 
+      btnFlotante.style.transform = "scale(1.1)";
+      btnFlotante.style.backgroundColor = "#52a17d"; 
+    } else {
+      miAudio.pause();
+      btnMenuIcono.textContent = "🔇"; 
+      btnFlotante.style.transform = "scale(1)";
+      btnFlotante.style.backgroundColor = "#7d52a1"; 
+    }
+  }
+</script>
 
 </body>
 </html>
