@@ -1,194 +1,111 @@
-⁵<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta name="google-site-verification" content="pzgHe8NQpmzZUVTEbhwnicL2-KkTHIZMLaD_843HbGE" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Escucha Activa - El Rincón del Churqui</title>
+    <title>el Rincón del Churqui - Escucha Activa</title>
     <style>
-    .foto-proyecto {
-    width: 100%;
-    max-width: 450px; /* Evita que se estiren de más */
-    height: auto;     /* Mantiene la proporción para que no se deformen */
-    display: block;
-    margin: 15px auto;
-    border-radius: 15px;
-    object-fit: contain;
-    }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #E5D9F2; 
-            color: #333333;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-        nav {
-            width: 100%;
-            background-color: #557A46;
-            padding: 15px 0;
-            text-align: center;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-        }
-        nav a {
-            text-decoration: none;
-            color: #ffffff;!important;
-            font-weight: bold;
-            margin: 0 15px;
-            font-size: 1.1rem;
-            text-shadow: 1px 1px 3px #000000;
-        }
-        .seccion {
-            max-width: 800px;
-            width: 100%;
-            margin: 30px auto;
-            text-align: center;
-            background: transpaqrent;
-            padding: 30px;
-            border-radius: 15px;
-
-            box-sizing: border-box;
-        }
-        h1, h2 { color: #4a3b6e; margin-bottom: 20px; }
-        h1 { font-size: 2.2rem; }
-        h2 { font-size: 1.8rem; }
-        .foto-proyecto {
-            width: 100%;
-            max-height: 450px;
-            object-fit: cover;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-        p.texto {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            color: #4f4f4f;
-            margin-bottom: 30px;
-        }
-        .boton-serrano {
-            display: inline-block;
-            background-color: #d16b9b; 
-            color: white;
-            text-decoration: none;
-            padding: 15px 35px;
-            font-size: 1.3rem;
-            font-weight: bold;
-            border-radius: 50px;
-            box-shadow: 0 4px 10px rgba(209, 107, 155, 0.3);
-        }
-        /* Contenedor adaptado para el Padlet real */
-        .contenedor-padlet {
-            width: 100%;
-            max-width: 100%;
-            height: 600px;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 2px dashed #be5587;
-            background-color: #fcfaff;
-        }
-        iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-    </style
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f1ea; color: #333; line-height: 1.6; }
+        header { background-color: #556b2f; color: white; padding: 20px; text-align: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        header h1 { font-size: 1.8rem; margin-bottom: 10px; }
+        nav { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        nav a { color: white; text-decoration: none; font-weight: bold; padding: 5px 10px; border-radius: 5px; transition: background 0.3s; font-size: 0.9rem; }
+        nav a:hover { background-color: #6b8e23; }
+        .container { max-width: 800px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        section { padding: 40px 0; border-bottom: 1px solid #e0dbcd; }
+        section:last-child { border-bottom: none; }
+        h2 { color: #556b2f; margin-bottom: 15px; font-size: 1.5rem; text-align: center; }
+        p { margin-bottom: 15px; text-align: justify; font-size: 1rem; color: #444; }
+        .img-container { text-align: center; margin: 20px 0; }
+        .img-container img { max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); }
+        .btn-whatsapp { display: block; width: fit-content; margin: 20px auto; background-color: #25d366; color: white; text-decoration: none; padding: 12px 25px; border-radius: 50px; font-weight: bold; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: background 0.3s; }
+        .btn-whatsapp:hover { background-color: #128c7e; }
+        .contenedor-padlet { margin-top: 20px; border-radius: 10px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+        footer { text-align: center; padding: 20px; color: #777; font-size: 0.85rem; border-top: 1px solid #e0dbcd; margin-top: 40px; }
+    </style>
 </head>
 <body>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-       <a href="#sobre-mi">Sobre Mí</a>
-        <a href="#reflexiones">Reflexiones</a>
-        
-        <a href="javascript:void(0);" id="btn-audio-menu" onclick="controlarMusica()" style="display: inline-flex; align-items: center; gap: 5px; margin-left: 15px;">🕉️<span id="icono-nota">🔇</span><
-    </nav>
-    <!-- SECCIÓN 1: INICIO -->
-    <div class="seccion" id="inicio">
-        <h1>Escucha Activa: El Rincón del Churqui</h1>
-        <img src="aromo-completo.jpg" alt="El Rincón del Churqui" class="foto-proyecto">
-        <p class="texto">
-            Bajo la calidez de nuestras sierras, este es un espacio seguro para soltar cargas, respirar profundo y ser escuchado. Sentite cómodo, estás en casa.
-        </p>
-      <a href="https://wa.me/5493584929947" style="display: block; max-width: fit-content; margin: 20px auto; background-color: #E1B12C; color: #ffffff !important; padding: 12px 24px; border-radius: 20px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px #000000;">Escríbeme, aquí te escucho</a>
-    <div class="seccion" id="sobre-mi">
-        <h2>Sobre Mí</h2>
-        <img src="mano-tatuaje.jpg" alt="Mi conexión con el monte" class="foto-proyecto">
-        <p class="texto">
-            Este espacio nace del respeto por los procesos de cada uno y la necesidad de encontrar un oído atento en medio del ruido diario. Aquí no hay juicios.
-        </p>
+    <header>
+        <h1>el Rincón del Churqui</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#sobre-mi">Sobre Mí</a>
+            <a href="#reflexiones">Reflexiones</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <!-- INICIO -->
+        <section id="inicio">
+            <h2>Bienvenido</h2>
+            <p>Este es un espacio de Escucha Activa creado para acompañarte, reflexionar juntos y encontrar un momento de paz en el día a Ver la belleza de lo simple.</p>
+            <div class="img-container">
+                <img src="aromo-completo.jpg" alt="Árbol Aromo">
+            </div>
+        </section>
+
+        <!-- SOBRE MÍ -->
+        <section id="sobre-mi">
+            <h2>Sobre Mí</h2>
+            <p>Hola, soy Sergio. A través de este rincón busco brindar un oído atento y compartir lecturas y pensamientos que nos ayuden a sanar y conectar con el interior.</p>
+            <div class="img-container">
+                <img src="principito.jpg" alt="El Principito y el Zorro">
+            </div>
+        </section>
+
+        <!-- REFLEXIONES -->
+        <section id="reflexiones">
+            <h2>Muro de Experiencias Anónimas</h2>
+            <p>Aquí puedes compartir lo que sientes de manera completamente anónima y escuchar los relatos de otros compañeros en este camino.</p>
+            <div class="contenedor-padlet">
+                <iframe src="https://padlet.com" width="100%" height="550" style="border:none;" allow="camera; microphone; geolocation"></iframe>
+            </div>
+        </section>
+
+        <!-- CONTACTO -->
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <p style="text-align: center; color: #555;">¿Tienes alguna duda o quieres conversar de manera personalizada?</p>
+            <a href="https://wa.me" class="btn-whatsapp" target="_blank">Escríbeme por WhatsApp</a>
+        </section>
     </div>
 
-    <!-- SECCIÓN 3: REFLEXIONES Y PADLET -->
-    <div class="seccion" id="reflexiones">
-        <h2>Reflexiones del Principito</h2>
-        <img src="principito.jpg" alt="Reflexiones del Principito" class="foto-proyecto">
-        <p class="texto" style="font-style: italic;">
-            "Ser amable es más importante que tener razón. A veces, lo que la gente necesita no es una mente brillante que hable, sino un corazón especial que escuche."
-      </p>
-        
-<div class="seccion" id="reflexiones">
-    <h2 style="text-align: center; margin-top: 30px;">Muro de Experiencias Anónimas</h2>
+    <footer>
+        <p>&copy; 2026 Escucha Activa - El Rincón del Churqui</p>
+    </footer>
 
-<div class="contenedor-padlet" style="margin-top: 20px; border: none; outline: none; width: 100%; max-width: 100%; padding: 0;">
-        <iframe src="https://padlet.com/loganellobo/el-rincon-del-churqui-rumac4u6nnu7878b" style="width: 100%; height: 500px; border: none;"></iframe>
+    <!-- REPRODUCTOR MAESTRO DE AUDIO OCULTO -->
+    <audio id="musica-fondo" loop>
+        <source src="meditacion-2.mp3" type="audio/mpeg">
+    </audio>
 
-</div>
+    <!-- CONTROL FLOTANTE DE MÚSICA GIGANTE (MUTE/PLAY) -->
+    <div id="btn-audio-flotante" onclick="controlarMusica()" style="position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background-color: #7d52a1; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; cursor: pointer; box-shadow: 0px 5px 15px rgba(0,0,0,0.4); z-index: 9999; transition: all 0.3s ease; user-select: none;">🔊</div>
 
-<!-- BOTÓN CORREGIDO -->
-<a href="https://padlet.com/loganellobo/el-rincon-del-churqui-rumac4u6nnu7878b" target="_blank" style="display: inline-block; background-color: #FFD700; color: #000000 !important; padding: 12px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        Abrir Muro en Pantalla Completa 🚀
-    </a>
-    <br>
-<a href="informacion.html" style="display: inline-block; background-color: #E1B12C; color: #ffffff !important; padding: 12px 20px; border-radius: 20px; text-decoration: none; font-weight: bold; text-shadow: 1px 1px 2px #000000;">👇 más información aquí 👇</a>
-</a>
- <!-- SECCIÓN DE CONTACTO -->
-    <div id="contacto" class="seccion" style="text-align: center; margin-top: 5px; padding: 30px; background-color: #ffffff; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.05);">
-        <h2 style="color: #1565c0;">Contacto</h2>
-        <p style="font-size: 1.1em; color: #555;">¿Tienes alguna duda o quieres coordinar directamente?</p>
-        <p style="font-size: 1.2em; font-weight: bold; margin: 15px 0;">
-           <p style="font-size: 1.2em; font-weight: bold; margin: 15px 0;">
-            💬 WhatsApp: <a href="https://wa.me/5493584929947" target="_blank" style="color: #2e7d32; text-decoration: none;">Enviar Mensaje</a>
-        </p>
-        <p style="color: #777; font-size: 0.9em;">Escucha Activa - El Rincón del Churqui</p>
-    </div>   
-</div>
-<!-- REPRODUCTOR OCULTO -->
-<audio id="musica-fondo" loop>
-  <source src="meditacion-2.mp3" type="audio/mpeg">
-</audio>
+    <!-- INTELIGENCIA DEL AUDIO -->
+    <script>
+        const miAudio = document.getElementById('musica-fondo');
+        const btnFlotante = document.getElementById('btn-audio-flotante');
 
-<!-- CONTROL MAESTRO FLOTANTE GIGANTE (MUTE/PLAY) -->
-<div id="btn-audio-flotante" onclick="controlarMusica()" style="position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background-color: #7d52a1; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; cursor: pointer; box-shadow: 0px 5px 15px rgba(0,0,0,0.4); z-index: 9999; transition: all 0.3s ease; user-select: none;">
-  🔊
-</div>
-
-<!-- LÓGICA DE REPRODUCCIÓN MEJORADA -->
-<script>
-  const miAudio = document.getElementById('musica-fondo');
-  const btnFlotante = document.getElementById('btn-audio-flotante');
-
-  function controlarMusica() {
-    if (miAudio.paused) {
-      miAudio.play().then(() => {
-        btnFlotante.textContent = "🔊🎵"; // Icono de música activa
-        btnFlotante.style.backgroundColor = "#52a17d"; // Color zen activo
-        btnFlotante.style.transform = "scale(1.1)";
-      }).catch(err => {
-        console.log("Interacción requerida por el navegador");
-      });
-    } else {
-      miAudio.pause();
-      btnFlotante.textContent = "🔇"; // Se pone mudo con parlantito tachado bien grande
-      btnFlotante.style.backgroundColor = "#ba3c3c"; // Alerta mudo (Rojo suave)
-      btnFlotante.style.transform = "scale(1)";
-    }
-  }
-</script>
-
+        function controlarMusica() {
+            if (miAudio.paused) {
+                miAudio.play().then(() => {
+                    btnFlotante.textContent = "🔊🎵";
+                    btnFlotante.style.backgroundColor = "#52a17d";
+                    btnFlotante.style.transform = "scale(1.1)";
+                }).catch(err => {
+                    console.log("Interacción requerida por el navegador");
+                });
+            } else {
+                miAudio.pause();
+                btnFlotante.textContent = "🔇";
+                btnFlotante.style.backgroundColor = "#ba3c3c";
+                btnFlotante.style.transform = "scale(1)";
+            }
+        }
+    </script>
 </body>
 </html>
