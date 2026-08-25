@@ -161,18 +161,21 @@
     <source src="meditacion-2.mp3" type="audio/mpeg">
 </audio>
 
-<div id="btn-audio-flotante" onclick="controlarMusica()" style="position: fixed; bottom: 25px; right: 25px; width: 65px; height: 65px; background-color: #7d52a1; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 32px; cursor: pointer; box-shadow: 0px 5px 15px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; user-select: none;">
-    🕉️
+<div id="btn-audio-flotante" onclick="controlarMusica()" style="position: fixed; bottom: 25px; right: 25px; padding: 0 15px; height: 65px; background-color: #7d52a1; color: white; border-radius: 35px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 28px; cursor: pointer; box-shadow: 0px 5px 15px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; user-select: none;">
+    <span>🕉️</span><span id="estado-parlante">🔊</span>
+</div>
+
 </div>
 
 <script>
 const miAudio = document.getElementById('musica-fondo');
 const btnFlotante = document.getElementById('btn-audio-flotante');
+const iconoParlante = document.getElementById('estado-parlante');
 
 function controlarMusica() {
     if (miAudio.paused) {
         miAudio.play().then(() => {
-            btnFlotante.textContent = "🕉️";
+            iconoParlante.textContent = "🔊";
             btnFlotante.style.backgroundColor = "#7d52a1";
             btnFlotante.style.transform = "scale(1.1)";
         }).catch(err => {
@@ -180,13 +183,13 @@ function controlarMusica() {
         });
     } else {
         miAudio.pause();
-        btnFlotante.textContent = "🔇";
+        iconoParlante.textContent = "🔇";
         btnFlotante.style.backgroundColor = "#ba3c3c";
         btnFlotante.style.transform = "scale(1)";
     }
 }
 </script>
-
+        
         
 </body>
 </html>
