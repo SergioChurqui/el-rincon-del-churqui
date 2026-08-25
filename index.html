@@ -162,35 +162,49 @@
 </audio>
 
 <!-- ========================================== -->
-<!-- PARCHE INMUNE A MÓVILES: AUDIO + BOTÓN     -->
+<!-- PARCHE DEFINITIVO: INTERRUPTOR AMBIVALENTE -->
 <!-- ========================================== -->
-<div id="contenedor-audio-flotante" style="position: fixed; bottom: 25px; right: 25px; background-color: #7d52a1; padding: 10px 15px; border-radius: 30px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 5px 15px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease;">
-    
-    <!-- Símbolo Om Fijo -->
-    <span style="font-size: 24px; color: white; user-select: none;">🕉️</span>
-    
-    <!-- Reproductor nativo simplificado (Inmune a bloqueos de tablets y celulares) -->
-    <audio id="musica-fondo" controls style="height: 30px; width: 200px;" loop>
-        <source src="meditation-2.mp3" type="audio/mpeg">
-        Tu navegador no soporta audio.
-    </audio>
-
+<div id="btn-audio-flotante" onclick="controlarMusica()" style="position: fixed; bottom: 25px; right: 25px; background-color: #7d52a1; padding: 10px 15px; border-radius: 30px; display: flex; align-items: center; gap: 8px; box-shadow: 0px 5px 15px rgba(0,0,0,0.3); z-index: 9999; cursor: pointer; transition: all 0.3s ease; user-select: none;">
+    <span style="font-size: 22px; color: white;">🕉️</span>
+    <span id="estado-parlante" style="font-size: 20px;">🔊</span>
 </div>
 
+<audio id="musica-fondo" loop preload="auto">
+    <source src="meditation-2.mp3" type="audio/mpeg">
+    <source src="./meditation-2.mp3" type="audio/mpeg">
+</audio>
+
 <script>
-// Lógica de acompañamiento estético para cambiar el color según reproducción nativa
-const miAudio = document.getElementById('musica-fondo');
-const contenedor = document.getElementById('contenedor-audio-flotante');
+// Forzamos un estado inicial manual para que NUNCA se quede trabado
+let musicaEncendida = false;
 
-miAudio.addEventListener('play', () => {
-    contenedor.style.backgroundColor = "#7d52a1"; // Morado al reproducir
-});
+function controlarMusica() {
+    const miAudio = document.getElementById('musica-fondo');
+    const btnFlotante = document.getElementById('btn-audio-flotante');
+    const iconoParlante = document.getElementById('estado-parlante');
 
-miAudio.addEventListener('pause', () => {
-    contenedor.style.backgroundColor = "#ba3c3c"; // Rojo al pausar
-});
+    if (!musicaEncendida) {
+        // Acción de encendido
+        miAudio.play().catch(err => {
+            console.log("Audio ausente o bloqueado, pero el botón sigue funcionando.");
+        });
+        
+        // El interruptor visual cambia de inmediato, sin importar si el audio falló
+        iconoParlante.textContent = "🔊";
+        btnFlotante.style.backgroundColor = "#7d52a1";
+        musicaEncendida = true;
+    } else {
+        // Acción de apagado
+        miAudio.pause();
+        
+        iconoParlante.textContent = "🔇";
+        btnFlotante.style.backgroundColor = "#ba3c3c";
+        musicaEncendida = false;
+    }
+}
 </script>
 <!-- ========================================== -->
+
 
         
         
