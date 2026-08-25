@@ -161,34 +161,37 @@
     <source src="meditacion-2.mp3" type="audio/mpeg">
 </audio>
 
-<div id="btn-audio-flotante" onclick="controlarMusica()" style="position: fixed; bottom: 25px; right: 25px; padding: 0 15px; height: 65px; background-color: #7d52a1; color: white; border-radius: 35px; display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 28px; cursor: pointer; box-shadow: 0px 5px 15px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease; user-select: none;">
-    <span>🕉️</span><span id="estado-parlante">🔊</span>
-</div>
+<!-- ========================================== -->
+<!-- PARCHE INMUNE A MÓVILES: AUDIO + BOTÓN     -->
+<!-- ========================================== -->
+<div id="contenedor-audio-flotante" style="position: fixed; bottom: 25px; right: 25px; background-color: #7d52a1; padding: 10px 15px; border-radius: 30px; display: flex; align-items: center; gap: 10px; box-shadow: 0px 5px 15px rgba(0,0,0,0.3); z-index: 9999; transition: all 0.3s ease;">
+    
+    <!-- Símbolo Om Fijo -->
+    <span style="font-size: 24px; color: white; user-select: none;">🕉️</span>
+    
+    <!-- Reproductor nativo simplificado (Inmune a bloqueos de tablets y celulares) -->
+    <audio id="musica-fondo" controls style="height: 30px; width: 200px;" loop>
+        <source src="meditacion-2.mp3" type="audio/mpeg">
+        Tu navegador no soporta audio.
+    </audio>
 
 </div>
 
 <script>
+// Lógica de acompañamiento estético para cambiar el color según reproducción nativa
 const miAudio = document.getElementById('musica-fondo');
-const btnFlotante = document.getElementById('btn-audio-flotante');
-const iconoParlante = document.getElementById('estado-parlante');
+const contenedor = document.getElementById('contenedor-audio-flotante');
 
-function controlarMusica() {
-    if (miAudio.paused) {
-        miAudio.play().then(() => {
-            iconoParlante.textContent = "🔊";
-            btnFlotante.style.backgroundColor = "#7d52a1";
-            btnFlotante.style.transform = "scale(1.1)";
-        }).catch(err => {
-            console.log("Interacción requerida por el navegador:", err);
-        });
-    } else {
-        miAudio.pause();
-        iconoParlante.textContent = "🔇";
-        btnFlotante.style.backgroundColor = "#ba3c3c";
-        btnFlotante.style.transform = "scale(1)";
-    }
-}
+miAudio.addEventListener('play', () => {
+    contenedor.style.backgroundColor = "#7d52a1"; // Morado al reproducir
+});
+
+miAudio.addEventListener('pause', () => {
+    contenedor.style.backgroundColor = "#ba3c3c"; // Rojo al pausar
+});
 </script>
+<!-- ========================================== -->
+
         
         
 </body>
